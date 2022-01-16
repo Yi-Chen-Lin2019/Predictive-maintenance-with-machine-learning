@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.feature_selection import SelectFromModel
-from sklearn.linear_model import LassoLarsCV
+from sklearn.ensemble import AdaBoostRegressor
+from sklearn.linear_model import SGDRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline, make_union
+from sklearn.preprocessing import RobustScaler
 from tpot.builtins import StackingEstimator
 
 # NOTE: Make sure that the outcome column is labeled 'target' in the data file
@@ -13,11 +13,12 @@ features = tpot_data.drop('target', axis=1)
 training_features, testing_features, training_target, testing_target = \
             train_test_split(features, tpot_data['target'], random_state=None)
 
-# Average CV score on the training set was: -0.0010660519615302666
+# Average CV score on the training set was: -0.0007889327968975957
 exported_pipeline = make_pipeline(
-    SelectFromModel(estimator=ExtraTreesRegressor(max_features=0.9500000000000001, n_estimators=100), threshold=0.35000000000000003),
-    StackingEstimator(estimator=ExtraTreesRegressor(bootstrap=True, max_features=0.9500000000000001, min_samples_leaf=8, min_samples_split=7, n_estimators=100)),
-    LassoLarsCV(normalize=False)
+    RobustScaler(),
+    StackingEstimator(estimator=AdaBoostRegressor(learning_rate=0.001, loss="linear", n_estimators=100)),
+    RobustScaler(),
+    SGDRegressor(alpha=0.001, eta0=0.01, fit_intercept=True, l1_ratio=0.0, learning_rate="constant", loss="huber", penalty="elasticnet", power_t=0.5)
 )
 
 exported_pipeline.fit(training_features, training_target)
