@@ -17,7 +17,7 @@ The aim of this project is to propose machine learning solutions for predictive 
 # Data source
 There are two datasets used in this project as you can find in Datasets folder:
 * [Bearings](https://github.com/Yi-Chen-Lin2019/Predictive-maintenance-with-machine-learning/tree/master/Datasets/bearings): Both anomaly detection and failure prediction use bearing dataset which is provided by [Case School of Engineering Bearing Data Center](https://engineering.case.edu/bearingdatacenter/download-data-file) and downloaded from [lestercardoz11’s public GitHub repository](https://github.com/lestercardoz11/fault-detection-for-predictive-maintenance-in-industry-4.0.git).
-* [Battery](https://github.com/Yi-Chen-Lin2019/Predictive-maintenance-with-machine-learning/tree/master/Datasets/battery): Remaining useful life (RUL) task use battery dataset which is downloaded from [NASA](http://ti.arc.nasa.gov/project/prognostic-data-repository) and battery B0005 is chosen as study object.
+* [Battery](https://github.com/Yi-Chen-Lin2019/Predictive-maintenance-with-machine-learning/tree/master/Datasets/battery): Remaining useful life (RUL) task use battery dataset which is downloaded from [NASA](https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#battery) and battery B0005 is chosen as study object.
 
 # Solution approach
 This project follows CRISP-DM methodology. Supervised and unsupervised algorithms are used to address set tasks. Please notice that artificial neuron network (ANN) is not explored in this project.
