@@ -12,4 +12,6 @@ The aim of this project is to propose machine learning solutions for predictive 
 * Failure prediction: The model should be able to predict whether there will be a failure.
 
 # Data source
-There are two datasets used in this project, anomaly detection and failure prediction use bearing dataset which is provided by Case School of Engineering (https://engineering.case.edu/bearingdatacenter/download-data-file) and downloaded from lestercardoz11’s public GitHub repository (https://github.com/lestercardoz11/fault-detection-for-predictive-maintenance-in-industry-4.0.git)
+There are two datasets used in this project:
+* Bearing: Both anomaly detection and failure prediction use bearing dataset which is provided by [Case School of Engineering Bearing Data Center](https://engineering.case.edu/bearingdatacenter/download-data-file) and downloaded from [lestercardoz11’s public GitHub repository](https://github.com/lestercardoz11/fault-detection-for-predictive-maintenance-in-industry-4.0.git).
+* Battery: Remaining useful life (RUL) task use battery dataset which is downloaded from [NASA](http://ti.arc.nasa.gov/project/prognostic-data-repository) and battery B0005 is chosen as study object.
